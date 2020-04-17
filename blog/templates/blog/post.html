@@ -1,0 +1,11 @@
+{% extends 'polls/page.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block content %}
+<center><h2>  {{post.title}}</h2>{{post.date}}</center>
+{{post.body|safe|linebreaks}}
+<p>{% if user.username %}
+      <p><h2><a href="delete/">delete it</a></h2></p>
+     {% endif %}</p>
+{% endblock %}

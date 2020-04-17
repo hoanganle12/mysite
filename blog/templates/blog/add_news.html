@@ -1,0 +1,12 @@
+{% extends 'polls/page.html' %}
+{% block title %} New post{% endblock %}
+{% block content %}
+<center><h1>Write it</h1>
+    <form action="{% url 'news:save' %}" method="POST">
+      {% csrf_token %}
+      <p>tittle: {{ f.title }}</p>
+      <p>main: {{ f.body }}</p>
+      <input type="submit" value="SAVE" />
+    </form></center>
+{% endblock %}
+>

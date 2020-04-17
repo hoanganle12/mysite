@@ -1,0 +1,12 @@
+{% extends 'polls/page.html' %}
+{% block title %} Trang chủ PhimPhim{% endblock %}
+{% block content123 %}
+    <center>
+        <form action="." method='POST'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="SIGN UP"/>
+        </form>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> {% block title %} {% endblock %}</title>
+    <style>
+        .header{
+            padding: 10px;
+            background-color: #CD3333;
+            color: #FFF;
+            }
+        .footer{
+        padding: 25px;
+        background-color: #CD3333;
+        color: #FFF;
+li {
+    float: left;
+}
+    li{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1> PHIMVIPRO </h1>
+        {% if user.username %}
+      <p> Hello! {{user.username}}!</p>
+      <p><a href="/blog/add">Blog something</a> </p>
+      <p><a href="{% url 'logout'%}">LOGOUT</a></p>
+      {% else %}
+      <b><a href="{% url 'register' %}">SIGNUP</a></b>
+        <a href="{% url 'login'%}"> SIGHIN</a>
+     {% endif %}
+    </div>
+    <h2>CATEGORY</h2>
+    <div class="menu">
+    <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/blog">ACTION</a></li>
+        <li><a href="#romance">ROMANCE</a></li>
+        <li><a href="#fiction">FICTION</a></li>
+        <li><a href="#horror">HORROR</a></li>
+    </ul>
+    </div>
+<div class="main">
+    {% block content123 %}
+    {% endblock %}
+</div>
+ <div class="footer">
+        <h1>Contact</h1>
+        <p>phimvimpro@gmail.com</p>
+    </div>
+</body>
+</html>
